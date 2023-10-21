@@ -1,0 +1,62 @@
+@use "../partials/index" as p;
+
+main{
+   .destination{
+      .section__title{
+         margin-block-end: 40px;
+      }
+      .destination__list{
+         display: grid;
+         gap: 30px;
+         .destination__card{
+            .card__banner{
+               position: relative;
+               border-radius: p.$radius-30;
+            }
+            &:is(:hover, :focus-within) .img__cover{
+               transform: scale(1.05);
+            }
+            .card__price{
+               position: absolute;
+               top: 20px;
+               right: 20px;
+               background-color: p.$bg-white;
+               color: p.$bg-majorelle-blue;
+               font-weight: p.$weight-bold;
+               font-size: 1.8rem;
+               line-height: 1.8rem;
+               padding: 5px 15px;
+               border-radius: p.$radius-pill;
+            }
+            .card__title{
+               margin-block:15px 15px ;
+               transition: p.$transition-1;
+               &:is(:hover, :focus-visible){
+                  color: p.$bg-majorelle-blue;
+               }
+            }
+            .card__rating{
+               margin-block-start: 10px;
+               gap: 10px;
+               .span{
+                  background-color: p.$bg-sunglow-alpha-10;
+                  gap: 5px;
+                  padding: 4px 12px;
+                  border-radius: p.$radius-pill;
+               }
+               ion-icon{
+                  color: p.$text-sunglow;
+               }
+            }
+         }
+         .destination__card :is(.card__rating, .span){
+            display: flex;
+            align-items: center;
+         }
+      }
+   }
+   .btn{
+      margin-inline:auto ;
+      margin-block-start: 40px;
+   }
+}

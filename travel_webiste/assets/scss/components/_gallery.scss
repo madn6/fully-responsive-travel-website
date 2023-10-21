@@ -1,0 +1,16 @@
+@use "../partials/index" as p;
+
+main {
+	.gallery {
+		.section__title {
+			margin-block-end: 40px;
+		}
+		.gallery__list {
+			display: grid;
+			gap: 15px;
+			.item__banner {
+				border-radius: p.$radius-30;
+			}
+		}
+	}
+}

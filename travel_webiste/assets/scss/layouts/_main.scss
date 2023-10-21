@@ -1,0 +1,66 @@
+/* ---------- main section ---------- */
+@use "../partials/index.scss" as p;
+
+main {
+	.hero {
+		padding-block-start: 150px;
+		.container {
+			display: grid;
+			gap: 50px;
+		}
+		.hero__subtitle {
+			background-color: p.$bg-misty-rose;
+			color: p.$text-light-coral;
+			font-size: p.$fontSize-7;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			max-width: max-content;
+			padding: 8px 20px;
+			border-radius: p.$radius-pill;
+		}
+		.hero__title {
+			margin-block: 20px;
+		}
+		.hero__text {
+			margin-block-end: 30px;
+		}
+		.btn__secondary {
+			margin-block-end: 20px;
+		}
+		.hero__btn {
+			color: p.$text-gunmetal;
+			font-weight: p.$weight-medium;
+			display: flex;
+			align-items: center;
+			gap: 30px;
+			transition: p.$transition-1;
+			&:is(:hover, :focus-visible) {
+				color: p.$bg-majorelle-blue;
+			}
+			.btn__img {
+				position: relative;
+				width: 60px;
+				height: 60px;
+				background-color: p.$bg-gainsboro;
+				border-radius: p.$radius-circle;
+				box-shadow: p.$shadow-1;
+				.img__cover {
+					border-radius: inherit;
+				}
+			}
+			ion-icon {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translate(50%, -50%);
+				background-color: p.$bg-white;
+				padding: 10px;
+				border-radius: p.$radius-circle;
+				box-shadow: p.$shadow-1;
+			}
+		}
+	}
+}
+
+/* ------- end of main section ------ */

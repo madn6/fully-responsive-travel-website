@@ -1,0 +1,99 @@
+@use "../partials/index" as p;
+
+footer {
+	.footer__top {
+		display: grid;
+		gap: 40px;
+		padding-block: 60px;
+		.logo {
+			img {
+				width: 180px;
+			}
+		}
+		.footer__text {
+			margin-block: 20px;
+		}
+		.social__list {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			.social__link {
+				color: p.$bg-majorelle-blue;
+				font-size: 2rem;
+				border-radius: p.$radius-pill;
+				transition: p.$transition-1;
+				&:is(:hover, :focus-visible) {
+					background-color: p.$bg-majorelle-blue;
+					color: p.$text-white;
+				}
+			}
+		}
+		.footer__list-title {
+			color: p.$text-gunmetal;
+			font-size: p.$fontSize-5;
+			font-weight: p.$weight-semiBold;
+			margin-block-end: 15px;
+		}
+		.footer__link {
+			margin-block-end: 10px;
+			&:is(:hover, :focus-visible) {
+				text-decoration: underline;
+			}
+		}
+		.footer__text {
+			margin-block-end: 15px;
+		}
+		.input__wrapper {
+			position: relative;
+			.input__field {
+				height: 55px;
+				padding-inline: 25px 60px;
+				border: 1px solid p.$bg-gainsboro;
+				color: p.$text-gunmetal;
+				border-radius: p.$radius-pill;
+				&:focus {
+					outline-color: p.$bg-majorelle-blue;
+				}
+			}
+			.input__btn {
+				width: 45px;
+				height: 45px;
+				background-color: p.$bg-majorelle-blue;
+				font-size: 2rem;
+				display: grid;
+				place-items: center;
+				border-radius: p.$radius-circle;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				bottom: 5px;
+				transition: p.$transition-1;
+				color: p.$text-white;
+				&:is(:hover, :focus-visible) {
+					background-color: p.$bg-ocean-blue;
+				}
+				ion-icon {
+					transform: translateX(-2px) rotate(45deg);
+				}
+			}
+		}
+	}
+	.footer__bottom {
+		padding-block: 30px;
+		border-block-start: 1px solid p.$bg-gainsboro;
+		.copyright {
+			margin-block-end: 20px;
+		}
+		.copyright__link {
+			display: inline-block;
+			color: p.$bg-majorelle-blue;
+			font-weight: p.$weight-medium;
+		}
+		.footer__bottom-link {
+			margin-block-end: 10px;
+			&:is(:hover, :focus-visible) {
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@use "../partials/index" as p;
+
+main {
+	.service {
+		.container {
+			display: grid;
+			gap: 25px;
+			.service__card {
+				padding: 25px 20px;
+				border-radius: p.$radius-20;
+				.card__title {
+					margin-block: 25px 20px;
+				}
+			}
+			.service__card:nth-child(2) {
+				background-color: p.$bg-chrome-yellow-alpha-5;
+			}
+			.service__card:nth-child(3) {
+				background-color: p.$bg-red-salsa-alpha-5;
+			}
+			.service__card:nth-child(4) {
+				background-color: p.$bg-majorelle-blue-alpha-5;
+			}
+		}
+	}
+}

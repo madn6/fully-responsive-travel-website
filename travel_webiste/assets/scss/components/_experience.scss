@@ -1,0 +1,34 @@
+@use "../partials/index" as p;
+
+main {
+	.experience {
+		.container {
+			display: grid;
+			gap: 50px;
+			.exp__banner {
+				position: relative;
+				.exp__shape {
+					position: absolute;
+					top: 50%;
+					left: -10px;
+					width: 25%;
+					filter: drop-shadow(p.$shadow-4);
+				}
+			}
+			.section__text {
+				margin-block-end: 20px;
+			}
+			.exp__item {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin-block-start: 15px;
+			}
+			.item__title {
+				color: p.$bg-majorelle-blue;
+				font-size: 3.6rem;
+				font-weight: p.$weight-bold;
+			}
+		}
+	}
+}

@@ -1,0 +1,60 @@
+@use "../partials/index" as p;
+
+/* ------------ preloader ----------- */
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: p.$bg-lavender-blush;
+	z-index: 99;
+	display: grid;
+	place-items: center;
+	.preloader__inner {
+		position: relative;
+		//preloader down shadow content
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80%;
+			height: 10px;
+			background-color: p.$bg-black-alpha-20;
+			filter: blur(4px);
+			z-index: -1;
+			animation: dropShadow 800ms ease-in-out infinite alternate;
+			//drop shadow animation
+			@keyframes dropShadow {
+				0% {
+					width: 40%;
+				}
+				100% {
+					width: 80%;
+				}
+			}
+		}
+	}
+
+	.preloader__image {
+		animation: bounce 800ms ease-in-out infinite alternate;
+		//preloader image animation
+		@keyframes bounce {
+			0% {
+				transform: translateY(-10px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+	}
+}
+
+.preloader.remove {
+	visibility: hidden;
+	opacity: 0;
+}
+
+/* ------------ end of preloader ----------- */

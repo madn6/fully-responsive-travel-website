@@ -1,0 +1,153 @@
+@use "../partials/index.scss" as p;
+
+html {
+	font-family: p.$ff-poppins;
+	font-size: 10px;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: p.$bg-lavender-blush;
+	color: p.$text-granite-gray;
+	font-size: p.$fontSize-6;
+	line-height: 1.8rem;
+}
+
+body.nav-active {
+	overflow: hidden;
+}
+
+/* ------------- header ------------- */
+.header {
+	padding-block: 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 4;
+	.logo {
+		img {
+			width: 160px;
+		}
+	}
+	.nav__toggle-btn {
+		font-size: 3.2rem;
+	}
+	//header container
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	//navbar
+	.navbar {
+		position: fixed;
+		top: 0;
+		right: -350px;
+		max-width: 350px;
+		width: 100%;
+		height: 100vh;
+		background-color: p.$bg-white;
+		padding: 30px 16px;
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+		transition: 400ms p.$cubic-out;
+		visibility: hidden;
+		.navbar__top {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.navbar__list {
+			margin-block-start: 50px;
+		}
+		.navbar__link {
+			position: relative;
+			color: p.$text-gunmetal;
+			font-size: p.$fontSize-7;
+			font-weight: p.$weight-medium;
+			padding-block: 16px;
+			transition: p.$transition-1;
+			&::before {
+				content: "";
+				position: absolute;
+				width: 3px;
+				height: 10px;
+				background-color: p.$bg-majorelle-blue;
+				top: 50%;
+				left: -10px;
+				transform: translateY(-50%);
+				border-radius: 5px;
+				opacity: 0;
+				transition: p.$transition-1;
+			}
+			&:is(:hover, :focus-visible, .active)::before {
+				opacity: 1;
+			}
+			&:is(:hover, :focus-visible, .active) {
+				transform: translateX(10px);
+			}
+		}
+		//header action
+		.header__action {
+			margin-block-start: auto;
+			padding-block-start: 20px;
+			border-block-start: 1px solid p.$border-gainsboro;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			//login button
+			.login__btn {
+				color: p.$text-gunmetal;
+				font-size: p.$fontSize-7;
+				font-weight: p.$weight-medium;
+				transition: p.$transition-1;
+				&:is(:hover, :focus-visible) {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	//overlay
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: p.$bg-white;
+		opacity: 0;
+		visibility: hidden;
+		transition: p.$transition-1;
+	}
+	.overlay.active {
+		visibility: visible;
+		opacity: 0.5;
+	}
+	//navbar active class
+	.navbar.active {
+		transform: translateX(-350px);
+		transition-duration: 500ms;
+		visibility: visible;
+	}
+	/* ----- media quirey for 992px ----- */
+}
+
+//header active class
+.header.active {
+	position: fixed;
+	background-color: p.$bg-white;
+	box-shadow: p.$shadow-1;
+	//header active animation
+	animation: slideIn 500ms ease forwards;
+	@keyframes slideIn {
+		0% {
+			transform: translateY(-100%);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+}
+/* ---------- end of header --------- */
